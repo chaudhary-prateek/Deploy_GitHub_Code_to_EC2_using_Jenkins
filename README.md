@@ -1,3 +1,4 @@
+```groovy
 # 🚀 CI/CD Pipeline: Deploy GitHub Code to EC2 using Jenkins
 
 This guide helps you set up a complete CI/CD pipeline where code from your GitHub repository is automatically deployed to an EC2 server using Jenkins.
