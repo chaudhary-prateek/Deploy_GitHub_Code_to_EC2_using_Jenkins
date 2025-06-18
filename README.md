@@ -1,4 +1,3 @@
-```groovy
 # 🚀 CI/CD Pipeline: Deploy GitHub Code to EC2 using Jenkins
 
 This guide helps you set up a complete CI/CD pipeline where code from your GitHub repository is automatically deployed to an EC2 server using Jenkins.
@@ -52,12 +51,12 @@ Key: Paste the copied public key
 --------------------------------------------------------------
 
 **🧭 1.4 Configure GitHub SSH Access on EC2**
-
+```groovy
 cd /var/www/html/<your-project-folder>
 git remote set-url origin git@github.com:<your-org-or-username>/<your-repo>.git
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 ssh -T git@github.com
-
+```
 --------------------------------------------------------------
 
 **⚙️ 2. Jenkins Setup**
@@ -127,13 +126,13 @@ sudo apt install git -y
 
 **🔒 3.2 Enable Jenkins SSH Access to EC2
 In EC2 Security Group:  ✅ Allow port 22 from Jenkins server IP**
-
+```groovy
 On EC2:
 
 echo "ssh-rsa AAAAB3Nza..." >> ~/.ssh/authorized_keys
 ssh ubuntu@<EC2_PUBLIC_IP>
 ssh-keyscan github.com >> ~/.ssh/known_hosts
-
+```
 ---------------------------------------------------------------
 
 **🛠️ 4. Jenkinsfile Example**
@@ -165,3 +164,4 @@ pipeline {
         }
     }
 }
+```
